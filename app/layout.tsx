@@ -1,29 +1,44 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
-
-import "./globals.css"
+import type { Metadata } from "next"
+import { Fraunces, Source_Serif_4, IBM_Plex_Mono } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import "./globals.css"
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-fraunces",
+  weight: ["500", "600"],
 })
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
+})
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-plex-mono",
+  weight: ["400", "500"],
+})
+
+export const metadata: Metadata = {
+  title: "AI Career Hub",
+  description:
+    "Interview prep for AI Trainer, AI Evaluator, Prompt Evaluator, and AI QA roles.",
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${fraunces.variable} ${sourceSerif.variable} ${plexMono.variable} antialiased`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
