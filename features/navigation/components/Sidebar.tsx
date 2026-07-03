@@ -1,5 +1,7 @@
+import { BookOpen, LibraryBig } from "lucide-react"
 import { ModuleNavList } from "./ModuleNavList"
 import type { ModuleMeta } from "@/lib/content/types"
+import Link from "next/link"
 
 interface SidebarProps {
   modules: ModuleMeta[]
@@ -13,6 +15,20 @@ export function Sidebar({ modules }: SidebarProps) {
           Course
         </p>
         <ModuleNavList modules={modules} />
+        <div className="mt-6 flex flex-col gap-1 border-t border-hairline pt-4">
+          <Link
+            href="/course"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"
+          >
+            <LibraryBig className="h-4 w-4" /> Full course index
+          </Link>
+          <Link
+            href="/glossary"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"
+          >
+            <BookOpen className="h-4 w-4" /> Glossary
+          </Link>
+        </div>
       </div>
     </aside>
   )

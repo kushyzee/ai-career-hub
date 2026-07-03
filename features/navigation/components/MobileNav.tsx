@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu } from "lucide-react"
+import { BookOpen, LibraryBig, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet"
 import { ModuleNavList } from "./ModuleNavList"
 import type { ModuleMeta } from "@/lib/content/types"
+import Link from "next/link"
 
 interface MobileNavProps {
   modules: ModuleMeta[]
@@ -40,6 +41,22 @@ export function MobileNav({ modules }: MobileNavProps) {
         </SheetHeader>
         <div className="px-3 py-2">
           <ModuleNavList modules={modules} onNavigate={() => setOpen(false)} />
+          <div className="mt-6 flex flex-col gap-1 border-t border-hairline px-3 pt-4">
+            <Link
+              href="/course"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"
+            >
+              <LibraryBig className="h-4 w-4" /> Full course index
+            </Link>
+            <Link
+              href="/glossary"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"
+            >
+              <BookOpen className="h-4 w-4" /> Glossary
+            </Link>
+          </div>
         </div>
       </SheetContent>
     </Sheet>
