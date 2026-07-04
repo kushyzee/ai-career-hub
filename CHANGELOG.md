@@ -6,10 +6,21 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
-### Planned
+Nothing in progress. Next planned work is the V2 roadmap (search, related modules, reading progress bar, notes, bookmarks, offline support). See `README.md`.
 
-- Real module content (currently one sample module); this closes out `1.0.0`, since `1.0.0` marks the course actually being complete and readable end-to-end, not just the scaffold
-- Nav links to `/course` and `/glossary` in `Sidebar` and `MobileNav`
+## [1.0.0] - 2026-07-04
+
+**The course is complete.** All 16 modules are written and readable end-to-end, this is the point where AI Career Hub actually does its job.
+
+### Added
+
+- All 16 modules of the AI Evaluation Interview Prep course: Rubric Engineering, Operational Definitions, Fact-Checking Methodology, Claim Classification Systems, Rubric Calibration, Score Anchoring, Decision Framework Design, Annotation Guideline Writing, Edge Case Design, Error Taxonomy, Error Analysis, Documentation Standards, AI Response Evaluation Frameworks, Reproducibility, AI Safety Evaluation, and End-to-End Evaluation Workflow
+- `/course` and `/glossary` links wired into `Sidebar` and `MobileNav`, making every route in the app reachable from navigation
+
+### Fixed
+
+- `AnswerComparison` parser was silently dropping the interviewer's question (the text before the `**Weak:**` label), now captured and rendered above the verdict-stamped answers
+- Duplicate section headings on the module page; `Section` no longer renders a generic label on top of each module's own Markdown heading
 
 ## [0.1.0] - 2026-07-04
 
