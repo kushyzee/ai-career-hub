@@ -28,8 +28,16 @@ export default async function ModulePage({ params }: ModulePageProps) {
   let parsedModule
   try {
     parsedModule = getModuleBySlug(slug)
-  } catch {
-    notFound()
+  } catch (error) {
+    const isFileMissing =
+      error instanceof Error &&
+      "code" in error &&
+      (error as NodeJS.ErrnoException).code === "ENOENT"
+
+    if (isFileMissing) {
+      notFound()
+    }
+    throw error
   }
 
   const { frontmatter, sections, readingTimeMinutes } = parsedModule

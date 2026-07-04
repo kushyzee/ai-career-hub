@@ -103,7 +103,7 @@ all 9 present): `plain-english`, `why-it-matters`, `pipeline-fit`, `examples`,
   them across modules.
 
 **Cross-module links** work as ordinary Markdown links pointing at another
-module's slug: `[Module 4](/modules/misleading-claims)`.
+module's slug: `[Module 4](/modules/claim-classification-systems)`.
 
 ## Roadmap
 
