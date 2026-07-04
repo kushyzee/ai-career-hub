@@ -49,7 +49,6 @@ export function getModuleSlugs(): string[] {
     .map((file) => file.replace(/\.md$/, ""))
 }
 
-/** Full parse: frontmatter + all 9 sections. Use for module detail pages. */
 export function getModuleBySlug(slug: string): ParsedModule {
   const filePath = path.join(CONTENT_DIR, `${slug}.md`)
   const raw = fs.readFileSync(filePath, "utf-8")
@@ -62,8 +61,6 @@ export function getModuleBySlug(slug: string): ParsedModule {
   return { frontmatter, sections, readingTimeMinutes }
 }
 
-/** Frontmatter only, sorted by `order`. Use for sidebar, breadcrumbs, prev/next —
- *  avoids parsing full section bodies for every module just to render nav. */
 export function getAllModuleMeta(): ModuleMeta[] {
   return getModuleSlugs()
     .map((slug) => {

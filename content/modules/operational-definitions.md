@@ -9,7 +9,7 @@ description: "Turn abstract eval criteria into observable, gradeable procedures.
 
 ## Plain English
 
-An operational definition takes a fuzzy, abstract concept — "accuracy," "helpfulness," "bias" — and turns it into a concrete, observable procedure that anyone can follow and get the same result.
+An operational definition takes a fuzzy, abstract concept; "accuracy," "helpfulness," "bias", and turns it into a concrete, observable procedure that anyone can follow and get the same result.
 
 <!-- section:why-it-matters -->
 
@@ -21,7 +21,7 @@ Abstract instructions produce inconsistent labels because every evaluator fills 
 
 ## Where it fits in the pipeline
 
-Operational definitions sit _inside_ the rubric — they're how you make a dimension like "Faithfulness" actually gradeable.
+Operational definitions sit _inside_ the rubric, they're how you make a dimension like "Faithfulness" actually gradeable.
 
 <!-- section:examples -->
 
