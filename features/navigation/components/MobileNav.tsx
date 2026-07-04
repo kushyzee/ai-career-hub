@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -33,15 +34,17 @@ export function MobileNav({ modules }: MobileNavProps) {
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-72 px-0">
-        <SheetHeader className="px-4">
+      <SheetContent side="left" className="flex h-full w-72 flex-col px-0">
+        <SheetHeader className="shrink-0 px-4">
           <SheetTitle className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
             Course
           </SheetTitle>
         </SheetHeader>
-        <div className="px-3 py-2">
+        <div className="min-h-0 flex-1 overflow-y-auto px-3 py-2">
           <ModuleNavList modules={modules} onNavigate={() => setOpen(false)} />
-          <div className="mt-6 flex flex-col gap-1 border-t border-hairline px-3 pt-4">
+        </div>
+        <SheetFooter>
+          <div className="flex flex-col gap-1 border-t border-hairline px-3 pt-4">
             <Link
               href="/course"
               onClick={() => setOpen(false)}
@@ -57,7 +60,7 @@ export function MobileNav({ modules }: MobileNavProps) {
               <BookOpen className="h-4 w-4" /> Glossary
             </Link>
           </div>
-        </div>
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   )
